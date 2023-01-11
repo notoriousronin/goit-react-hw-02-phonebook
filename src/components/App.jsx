@@ -72,7 +72,7 @@ export default class App extends Component {
         <Filter value={filter} onChange={this.changeFilter} />
         <ContactList
           contacts={visibleContacts}
-          ereseContact={this.deleteContact}
+          onDeleteContact={this.deleteContact}
         />
       </div>
     );

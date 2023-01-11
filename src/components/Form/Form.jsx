@@ -30,6 +30,12 @@ export default class Form extends Component {
     const mystyle = {
       marginRight: '10px',
     };
+
+    const addBtnStyles = {
+      marginLeft: '10px',
+      backgroundColor: 'green',
+      color: 'white',
+    };
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor={this.nameInputId}>
@@ -59,7 +65,9 @@ export default class Form extends Component {
           />
         </label>
 
-        <button type="submit">Add Contact</button>
+        <button style={addBtnStyles} type="submit">
+          Add Contact
+        </button>
       </form>
     );
   }

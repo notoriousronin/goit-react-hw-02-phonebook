@@ -27,11 +27,15 @@ export default class Form extends Component {
   };
 
   render() {
+    const mystyle = {
+      marginRight: '10px',
+    };
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor={this.nameInputId}>
           Name
           <input
+            style={mystyle}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"

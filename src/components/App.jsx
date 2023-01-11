@@ -15,6 +15,14 @@ export default class App extends Component {
     filter: '',
   };
 
+  deleteContact = contactName => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(
+        contact => contact.id !== contactName
+      ),
+    }));
+  };
+
   addContactItem = ({ name, number }) => {
     const newContact = {
       id: nanoid(),
@@ -62,7 +70,10 @@ export default class App extends Component {
         <Form onSubmit={this.addContactItem} />
         <h2>Contacts</h2>
         <Filter value={filter} onChange={this.changeFilter} />
-        <ContactList contacts={visibleContacts} />
+        <ContactList
+          contacts={visibleContacts}
+          ereseContact={this.deleteContact}
+        />
       </div>
     );
   }

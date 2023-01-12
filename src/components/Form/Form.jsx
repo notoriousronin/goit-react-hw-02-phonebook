@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Form extends Component {
   state = {
@@ -72,3 +73,7 @@ export default class Form extends Component {
     );
   }
 }
+
+Form.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
